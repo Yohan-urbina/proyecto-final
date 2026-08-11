@@ -33,15 +33,12 @@
 
   <script>
     // Configuración de Supabase
-    const SUPABASE_URL = 'https://fskunhjcxbcqvcaflnpi.supabase.co';
-    const SUPABASE_KEY = 'sb_publishable_9-ZBW1IWemOLtwwIU-yXOQ_XGge60CJ';
-
-    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const SUPABASE_URL = 'https://smmsucyqiurtsgrnfezt.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_lxggBHMUQ1B0JoT3OuQDSQ_MXHgnMIK';
+const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     async function cargarProductos() {
-      const { data, error } = await supabaseClient
-        .from('datos_prueba')
-        .select('*');
+  const { data, error } = await supabase.from('datos_prueba').select('*');
 
       if (error) {
         console.error('Error al cargar datos:', error);
@@ -60,6 +57,7 @@
             <td>${p.stock || '0'}</td>
           </tr>
         `;
+        
         tbody.innerHTML += fila;
       });
     }
