@@ -35,10 +35,10 @@
     // Configuración de Supabase
   const SUPABASE_URL = 'https://smmsucyqiurtsgrnfezt.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_lxggBHMUQ1B0JoT3OuQDSQ_MXHgnMIK';
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const _supabase = supabase.createClient(supabase_URL, supabase_KEY);
 
-    async function cargarProductos() {
-  const { data, error } = await supabase.from('datos_prueba').select('*');
+async function cargarProductos() {
+  const { data, error } = await _supabase.from('productos').select('*');
 
       if (error) {
         console.error('Error al cargar datos:', error);
